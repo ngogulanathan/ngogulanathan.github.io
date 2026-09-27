@@ -1,21 +1,30 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Gusk AI Privacy Policy</title><link rel="stylesheet" href="style.css"></head>
-<body><main>
-<header><a href="index.html" aria-label="Gusk AI home">
-<svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#2b2e36"/><path d="M14 26h24a6 6 0 1 0-6-6M14 34h30a6 6 0 1 1-6 6M14 42h16" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg></a>
-<h1>Privacy policy</h1></header>
-<p class="muted">Gusk AI · Effective 27 September 2026</p>
+<title>Privacy Policy · Gusk AI</title><meta name="description" content="How Gusk AI handles your Google account data.">
+<link rel="icon" href="logo.png"><link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="index.html"><picture><source srcset="logo-dark.png" media="(prefers-color-scheme: dark)"><img src="logo.png" alt="" width="28" height="28"></picture>Gusk AI</a>
+<nav><a class="hide-sm" href="index.html#features">Features</a><a class="hide-sm" href="index.html#privacy">Privacy</a><a href="mailto:ngogulanathan@gmail.com">Contact</a></nav>
+</div></header>
+<main class="wrap"><article class="prose">
+<p class="eyebrow">Legal</p>
+<h1>Privacy policy</h1>
+<p class="meta">Gusk AI · Effective 28 September 2026</p>
 
-<p>Gusk AI (“the app”) is made by Gogulanathan Nagarajan, an individual developer. This policy explains what the app does with your Google account data. The short version: <b>your email stays between Google and your device. We don’t run a server, and we never receive, store, sell or share your data.</b></p>
+<p class="summary">Gusk AI (“the app”) is made by Gogulanathan Nagarajan, an individual developer. This policy explains what the app does with your Google account data. The short version: <b>your email stays between Google and your device. We don’t run a server, and we never receive, store, sell or share your data.</b></p>
 
 <h2>Data the app accesses</h2>
 <p>With your permission, the app uses the Gmail API to:</p>
 <ul>
 <li>read your messages’ headers (sender, recipients, subject, date, labels, size) to list and group your mail;</li>
 <li>read a message’s body and attachments when you open it;</li>
-<li>archive, trash, label, mark read or unread, star, and permanently delete messages <b>only when you ask it to</b>;</li>
+<li>archive, move to Trash, label, mark read or unread, and star messages <b>only when you ask it to</b> (the app never deletes mail permanently; Gmail empties Trash after 30 days);</li>
 <li>send email and save drafts you write;</li>
+<li>send an unsubscribe email to a mailing list, <b>only when you tap Unsubscribe</b> for that sender and the sender’s own unsubscribe instructions ask for an email;</li>
 <li>create Gmail filters when you choose to handle a sender’s future mail automatically;</li>
 <li>save one small message labelled “Winnow Settings” in your own Gmail, holding your email signatures, so they appear on all your devices.</li>
 </ul>
@@ -25,6 +34,7 @@
 <li><b>Your device only.</b> Message details are cached on your device so the app opens quickly. The AI features (summaries, answers, suggestions) run on your device using Apple Intelligence; your email is not sent to any AI service.</li>
 <li><b>Sign-in.</b> Your Google sign-in token is stored in your device’s Keychain.</li>
 <li><b>Sender logos.</b> To show a sender’s logo, the app may request an icon for the sender’s <i>domain name</i> (for example “amazon.com”) from Google, DuckDuckGo or Unavatar. Only the domain is sent — never your email address or any message content. You can turn this off in Settings.</li>
+<li><b>Unsubscribe links.</b> When you tap Unsubscribe and the sender provides a web link for it, that link opens in your browser, just as if you had clicked it in the email.</li>
 <li><b>Nowhere else.</b> The developer has no server and receives no copy of your data. No analytics or advertising services are used.</li>
 </ul>
 
@@ -33,6 +43,7 @@
 
 <h2>Deleting your data</h2>
 <ul>
+<li>Sign out in the app (Settings → Connection &amp; permissions → Sign Out). This revokes the app’s access to your Google account and deletes the mail stored on that device.</li>
 <li>Delete the app from your device to remove everything it stored there. Settings → Connection &amp; permissions → Rebuild Local Index also clears the local cache.</li>
 <li>Revoke the app’s access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
 <li>The “Winnow Settings” message and “Winnow/Reviewed” label live in your Gmail; you can delete them there.</li>
@@ -43,5 +54,9 @@
 
 <h2>Changes and contact</h2>
 <p>If this policy changes, the new version will be posted on this page with a new date. Questions: <a href="mailto:ngogulanathan@gmail.com">ngogulanathan@gmail.com</a>.</p>
-<footer><a href="index.html">Gusk AI</a> · © 2026 Gogulanathan Nagarajan</footer>
-</main></body></html>
+</article></main>
+<footer class="foot"><div class="wrap">
+<span>© 2026 Gogulanathan Nagarajan</span>
+<nav><a href="index.html">Home</a><a href="mailto:ngogulanathan@gmail.com">Contact</a></nav>
+</div></footer>
+</body></html>
