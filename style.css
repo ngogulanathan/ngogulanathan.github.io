@@ -121,3 +121,7 @@ figcaption b{display:block;color:var(--ink);font-size:15.5px;margin-bottom:2px}
 .tablet img{border-radius:18px}
 @media (min-width:900px){.device.ipad{width:86%;margin-left:auto}}
 @media (max-width:600px){.tablet{padding:7px;border-radius:18px}.tablet img{border-radius:12px}}
+.shot{border-radius:22px;overflow:hidden;box-shadow:0 0 0 1px var(--line-2),0 30px 60px -24px rgba(16,18,24,.35);transition:transform .25s ease}
+.shot:hover{transform:translateY(-4px)}
+.shot img{display:block;width:100%;height:auto}
+.device .shot{border-radius:16px}
