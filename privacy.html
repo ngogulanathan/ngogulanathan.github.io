@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Privacy Policy · Gusk AI</title><meta name="description" content="How Gusk AI handles your Google account data.">
+<title>Privacy Policy · Gusk AI</title><meta name="description" content="How Gusk AI handles your email.">
 <link rel="icon" href="logo.png"><link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,59 +13,53 @@
 <main class="wrap"><article class="prose">
 <p class="eyebrow">Legal</p>
 <h1>Privacy policy</h1>
-<p class="meta">Gusk AI · Effective 1 October 2026</p>
+<p class="meta">Gusk AI · Effective 9 October 2026</p>
 
-<p class="summary">Gusk AI (“the app”) is made by Gogulanathan Nagarajan, an individual developer. This policy explains what the app does with your Google account data. The short version: <b>your email stays between Google and your device. We don’t run a server, and we never receive, store, sell or share your data.</b></p>
+<p class="summary">Gusk AI (“the app”) is made by Gogulanathan Nagarajan, an individual developer. This policy explains what the app does with your email. The short version: <b>your email stays between your mail service and your device. We don’t run a server, and we never receive, store, sell or share your data.</b></p>
+
+<h2>How you sign in</h2>
+<p>You connect Gmail, iCloud Mail, Yahoo Mail, Zoho Mail or another IMAP service with an <b>app password</b>, a separate password your mail service creates for one app. The app never uses your main account password.</p>
+<ul>
+<li>The app connects <b>directly from your device</b> to your mail service’s own IMAP (reading) and SMTP (sending) servers, always over TLS encryption.</li>
+<li>The app password is stored only in your device’s encrypted Keychain, is available only on that device, and is never backed up, synced or sent anywhere except to your mail service when signing in.</li>
+</ul>
 
 <h2>Data the app accesses</h2>
-<p>With your permission, the app uses the Gmail API to:</p>
+<p>Using your app password, the app:</p>
 <ul>
-<li>read your messages’ headers (sender, recipients, subject, date, labels, size) to list and group your mail;</li>
-<li>read a message’s body and attachments when you open it;</li>
-<li>archive, move to Trash, label, mark read or unread, and star messages <b>only when you ask it to</b> (the app never deletes mail permanently; Gmail empties Trash after 30 days);</li>
-<li>send email and save drafts you write;</li>
-<li>send an unsubscribe email to a mailing list, <b>only when you tap Unsubscribe</b> for that sender and the sender’s own unsubscribe instructions ask for an email;</li>
-<li>create Gmail filters when you choose to handle a sender’s future mail automatically;</li>
-<li>save one small message labelled “Winnow Settings” in your own Gmail, holding your email signatures, so they appear on all your devices.</li>
+<li>reads your messages’ headers (sender, recipients, subject, date, folders or labels, size) to list and group your mail;</li>
+<li>reads a message’s body and attachments when you open it;</li>
+<li>archives, moves to Trash, labels or files, marks read or unread, and stars messages <b>only when you ask it to</b>;</li>
+<li>empties Spam or Trash, which deletes those messages permanently, <b>only when you ask it to</b>;</li>
+<li>sends email and saves drafts you write;</li>
+<li>sends an unsubscribe email to a mailing list, <b>only when you tap Unsubscribe</b> for that sender and the sender’s own unsubscribe instructions ask for an email;</li>
+<li>remembers, on your device, how you chose to handle a sender, and applies that choice to their new mail when it syncs;</li>
+<li>saves one small message labelled “Winnow Settings” in your own mailbox, holding your email signatures, so they appear on all your devices.</li>
 </ul>
 
 <h2>Where your data goes</h2>
 <ul>
-<li><b>Your device only.</b> Message details are cached on your device so the app opens quickly. The AI features (summaries, answers, suggestions) run on your device using Apple Intelligence; your email is not sent to any AI service.</li>
-<li><b>Sign-in.</b> Your Google sign-in token is stored in your device’s Keychain.</li>
+<li><b>Your device only.</b> Message details are cached on your device so the app opens quickly. The AI features (summaries, answers, suggestions) run on your device using Apple Intelligence; your email is not sent to any AI service and is not used to train AI models.</li>
+<li><b>Voice dictation.</b> When you dictate, speech is converted to text by Apple’s speech recognition; the app does not keep the audio.</li>
 <li><b>Sender logos.</b> To show a sender’s logo, the app may request an icon for the sender’s <i>domain name</i> (for example “amazon.com”) from Google, DuckDuckGo or Unavatar. Only the domain is sent — never your email address or any message content. You can turn this off in Settings.</li>
 <li><b>Unsubscribe links.</b> When you tap Unsubscribe and the sender provides a web link for it, that link opens in your browser, just as if you had clicked it in the email.</li>
 <li><b>Nowhere else.</b> The developer has no server and receives no copy of your data. No analytics or advertising services are used.</li>
 </ul>
 
-<h2>Signing in with an app password</h2>
-<p>You can connect Gmail, iCloud Mail, Yahoo Mail, Zoho Mail or another service with an <b>app password</b> instead of Google sign-in. Then:</p>
-<ul>
-<li>the app connects <b>directly from your device</b> to your mail service’s own IMAP (reading) and SMTP (sending) servers, always over TLS encryption;</li>
-<li>the app password is stored only in your device’s encrypted Keychain, is available only on that device, and is never backed up, synced or sent anywhere except to your mail service when signing in;</li>
-<li>the app does the same things listed above, using your mail service’s folders and labels; <b>only when you ask</b>, it can also empty Spam or Trash, which deletes those messages permanently;</li>
-<li>to stop access, remove the account in Settings → Mail accounts, and revoke the app password in your mail service’s account settings.</li>
-</ul>
-
 <h2>How your data is protected</h2>
 <ul>
-<li><b>Encrypted connections only.</b> The app talks only to Google’s servers (and, for sender logos, the icon services named above), always over encrypted HTTPS (TLS). There is no developer server in between.</li>
-<li><b>Secure sign-in.</b> You sign in on Google’s own page using OAuth with PKCE; the app never sees your Google password. It asks only for the Gmail permissions it needs.</li>
-<li><b>Sign-in token in the Keychain.</b> Your Google sign-in token is kept in your device’s encrypted Keychain, is available only on that device, and is never backed up to or synced with other devices.</li>
-<li><b>Encrypted storage on the device.</b> On iPhone and iPad, the app’s mail cache uses iOS Data Protection, so it is encrypted and unreadable after a restart until you unlock the device. On a Mac it is stored in your user account’s private app folder, protected by FileVault when that is turned on.</li>
+<li><b>Encrypted connections only.</b> The app talks only to your mail service’s servers (and, for sender logos, the icon services named above), always over TLS encryption. There is no developer server in between.</li>
+<li><b>Encrypted storage on the device.</b> On iPhone and iPad, the app’s mail cache uses iOS Data Protection, so it is encrypted and unreadable after a restart until you unlock the device. On a Mac it is stored in the app’s private sandboxed folder, protected by FileVault when that is turned on.</li>
 <li><b>No copies elsewhere.</b> The developer never receives, stores or has access to your email, so there is no remote copy that could be breached.</li>
-<li><b>You stay in control.</b> Settings → Sync → Connection &amp; permissions shows exactly which Gmail permissions the app holds. You can revoke access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, and deleting the app removes everything it stored.</li>
 </ul>
-
-<h2>Google API Services User Data Policy</h2>
-<p>Gusk AI’s use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Google user data is used only to provide the app’s features to you, is not transferred to anyone, is not used for advertising, and is not used to train AI models.</p>
 
 <h2>Deleting your data</h2>
 <ul>
-<li>Sign out in the app (Settings → Connection &amp; permissions → Sign Out). This revokes the app’s access to your Google account and deletes the mail stored on that device.</li>
-<li>Delete the app from your device to remove everything it stored there. Settings → Connection &amp; permissions → Rebuild Local Index also clears the local cache.</li>
-<li>Revoke the app’s access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
-<li>The “Winnow Settings” message and “Winnow/Reviewed” label live in your Gmail; you can delete them there.</li>
+<li>Remove an account in Settings → Accounts. This deletes its app password and the mail stored for it on that device; your mailbox is untouched.</li>
+<li>Rebuild Local Index in Settings clears the local cache and downloads it again.</li>
+<li>Delete the app from your device to remove everything it stored there.</li>
+<li>Revoke the app password at any time in your mail service’s account settings.</li>
+<li>The “Winnow Settings” message and “Winnow/Reviewed” label live in your mailbox; you can delete them there.</li>
 </ul>
 
 <h2>Children</h2>
