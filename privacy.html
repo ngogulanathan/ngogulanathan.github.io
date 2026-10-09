@@ -13,7 +13,7 @@
 <main class="wrap"><article class="prose">
 <p class="eyebrow">Legal</p>
 <h1>Privacy policy</h1>
-<p class="meta">Gusk AI · Effective 9 October 2026</p>
+<p class="meta">Gusk AI · Effective 10 October 2026</p>
 
 <p class="summary">Gusk AI (“the app”) is made by Gogulanathan Nagarajan, an individual developer. This policy explains what the app does with your email. The short version: <b>your email stays between your mail service and your device. We don’t run a server, and we never receive, store, sell or share your data.</b></p>
 
@@ -41,14 +41,17 @@
 <ul>
 <li><b>Your device only.</b> Message details are cached on your device so the app opens quickly. The AI features (summaries, answers, suggestions) run on your device using Apple Intelligence; your email is not sent to any AI service and is not used to train AI models.</li>
 <li><b>Voice dictation.</b> When you dictate, speech is converted to text by Apple’s speech recognition; the app does not keep the audio.</li>
-<li><b>Sender logos.</b> To show a sender’s logo, the app may request an icon for the sender’s <i>domain name</i> (for example “amazon.com”) from Google, DuckDuckGo or Unavatar. Only the domain is sent — never your email address or any message content. You can turn this off in Settings.</li>
+<li><b>Sender logos (off unless you turn them on).</b> By default senders are shown with their initials and nothing is requested. If you turn on <i>Load external sender logos</i> in Settings → Security, the app requests an icon for the sender’s <i>domain name</i> (for example “amazon.com”) from Google, DuckDuckGo, Unavatar or the sender’s own website. Only the domain is sent — never your email address or any message content.</li>
+<li><b>Images in emails (off unless you allow them).</b> Pictures that an email loads from the internet are blocked by default, because they can tell the sender that you opened the email and reveal your IP address. Tap <i>Load Images</i> on an email to load them for that email, or turn on <i>Automatically load remote images</i> in Settings → Security. Images attached to or embedded in the email itself always show.</li>
+<li><b>Diagnostic reports.</b> Ask Gusk can prepare a troubleshooting report on your device. It contains no email content, contacts, passwords or email addresses, you see all of it first, and it leaves your device only if you choose to share it.</li>
 <li><b>Unsubscribe links.</b> When you tap Unsubscribe and the sender provides a web link for it, that link opens in your browser, just as if you had clicked it in the email.</li>
 <li><b>Nowhere else.</b> The developer has no server and receives no copy of your data. No analytics or advertising services are used.</li>
 </ul>
 
 <h2>How your data is protected</h2>
 <ul>
-<li><b>Encrypted connections only.</b> The app talks only to your mail service’s servers (and, for sender logos, the icon services named above), always over TLS encryption. There is no developer server in between.</li>
+<li><b>Encrypted connections only.</b> The app talks only to your mail service’s servers — and, only if you allow them, the icon services named above and the sources of an email’s images — over encrypted connections (images over HTTPS only). There is no developer server in between.</li>
+<li><b>App Lock.</b> You can lock the app with Face ID, Touch ID, your device passcode or a separate app passcode (Settings → Security). The app never receives biometric data; only a scrambled check of an app passcode is kept, in this device’s Keychain.</li>
 <li><b>Encrypted storage on the device.</b> On iPhone and iPad, the app’s mail cache uses iOS Data Protection, so it is encrypted and unreadable after a restart until you unlock the device. On a Mac it is stored in the app’s private sandboxed folder, protected by FileVault when that is turned on.</li>
 <li><b>No copies elsewhere.</b> The developer never receives, stores or has access to your email, so there is no remote copy that could be breached.</li>
 </ul>
