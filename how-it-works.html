@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Gusk AI works</title>
+<meta name="description" content="How Gusk AI works, step by step: signing in, downloading mail, bundles, cleaning up, undo and signing out.">
+<meta name="theme-color" content="#fbfbfc" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0c0d10" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="logo.png"><link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.how{padding:56px 0 24px}
+.how h1{font-size:clamp(32px,5vw,48px);letter-spacing:-.03em;margin:0 0 12px}
+.step{padding:36px 0;border-top:1px solid var(--line-2)}
+.step h2{font-size:24px;letter-spacing:-.02em;margin:0 0 8px}
+.step p,.step li{color:var(--muted);font-size:16px;max-width:42rem}
+.step ul{padding-left:20px;margin:12px 0 0}
+.diagram{margin:20px 0 8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.diagram .mermaid{min-width:280px;text-align:center}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.toc a{display:inline-block;padding:6px 12px;border:1px solid var(--line-2);border-radius:999px;font-size:14px;text-decoration:none}
+</style></head>
+<body>
+<header class="nav"><div class="wrap">
+<a class="brand" href="index.html"><picture><source srcset="logo-dark.png" media="(prefers-color-scheme: dark)"><img src="logo.png" alt="" width="28" height="28"></picture>Gusk AI</a>
+<nav><a class="hide-sm" href="index.html#features">Features</a><a href="how-it-works.html">How it works</a><a class="hide-sm" href="privacy.html">Privacy</a><a href="mailto:ngogulanathan@gmail.com">Contact</a></nav>
+</div></header>
+
+<main class="how"><div class="wrap">
+<p class="eyebrow">Step by step</p>
+<h1>How Gusk AI works</h1>
+<p class="section-sub" style="margin:0">Gusk AI reads your email, groups it so it's easy to clean up, and changes it only when you ask. Gusk AI has no server: your mail goes between your device and your own mail service. Every cleanup action can be undone.</p>
+<ul class="toc">
+<li><a href="#overview">Overview</a></li><li><a href="#signin">Sign in</a></li><li><a href="#sync">Your mail</a></li><li><a href="#bundles">Bundles</a></li><li><a href="#browse">Reading</a></li><li><a href="#cleanup">Cleaning up</a></li><li><a href="#undo">Undo</a></li><li><a href="#signout">Removing an account</a></li>
+</ul>
+
+<section class="step" id="overview">
+<h2>1. Overview</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+    A[Sign in] --> B[Download mail]
+    B --> C[Group into bundles]
+    C --> D[Read and browse]
+    D --> E[Clean up]
+    E --> F[Undo if needed]
+</pre></div>
+</section>
+
+<section class="step" id="signin">
+<h2>2. Signing in</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    A([Open Gusk AI]) --> B{Is an account<br/>signed in?}
+    B -- Yes --> Z([Your inbox])
+    B -- No --> C[Sign-in screen]
+    C --> D[Pick your mail service<br/>Gmail, iCloud, Yahoo, Zoho, IMAP]
+    D --> E[Enter your email address<br/>and an app password]
+    E --> F{Accepted by your<br/>mail service?}
+    F -- No --> E
+    F -- Yes --> H[App password saved in the<br/>Keychain on this device]
+    H --> Z
+</pre></div>
+<ul>
+<li>An <b>app password</b> is a separate password your mail service creates for one app. Your main password is never used, and you can revoke the app password at any time.</li>
+<li>Gusk AI has no accounts of its own, so there's nothing to create. Signing in connects the app directly to your mail service.</li>
+</ul>
+</section>
+
+<section class="step" id="sync">
+<h2>3. Getting your mail</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    A[Connect to your mail service<br/>IMAP over TLS, encrypted] --> B[Download your emails]
+    B --> C[(Stored on this device<br/>protected by iOS / macOS data protection)]
+    C --> D[Inbox, Browse and Sweep update]
+    C --> E{New mail or<br/>a sync problem?}
+    E -- Yes --> F[Notification and badge]
+</pre></div>
+<ul>
+<li>Your mail goes directly between this device and your mail service. It's never copied to a Gusk AI server, because there isn't one.</li>
+<li>Email you write is sent through your mail service over SMTP with TLS.</li>
+</ul>
+</section>
+
+<section class="step" id="bundles">
+<h2>4. Bundles</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    A[An email] --> B{Sender on a shared domain<br/>like gmail.com?}
+    B -- No --> C[Bundled by company domain<br/>all mail from shop.example]
+    B -- Yes --> D[Bundled by exact address<br/>friend@gmail.com]
+    C --> E[Bundle in Browse and Sweep]
+    D --> E
+</pre></div>
+<p>A <b>bundle</b> is all the mail from one company, or from one person on a shared service like Gmail. Cleaning up a bundle handles all of it at once.</p>
+</section>
+
+<section class="step" id="browse">
+<h2>5. Reading and browsing</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    A[Your mail] --> B[Inbox<br/>every account in one list]
+    A --> C[Browse<br/>Senders, Domains, Subjects,<br/>Bundles, Messages]
+    A --> D[Sweep<br/>one bundle at a time]
+    A --> E[Ask Gusk<br/>questions in plain words]
+    B --> R[Open an email]
+    C --> R
+    R --> S{Pictures from<br/>the web?}
+    S -- Yes --> T[Blocked until you tap<br/>Load Images]
+    S -- No --> U[Email shown]
+    T --> U
+</pre></div>
+<ul>
+<li><b>Ask Gusk</b> runs on your device with Apple Intelligence. Your mail isn't sent to an AI cloud.</li>
+<li><b>Pictures from the web in emails</b> and <b>sender logos</b> are off by default. You can turn them on in Settings › Security.</li>
+</ul>
+</section>
+
+<section class="step" id="cleanup">
+<h2>6. Cleaning up</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    A[You choose an action] --> B{From where?}
+    B -- Sweep --> C{Is any email in the bundle<br/>starred or protected?}
+    C -- Yes --> C1[Whole bundle left alone]
+    C -- No --> D[Keep, Archive or Trash]
+    B -- Selected emails --> E[Mark Read, Archive or Trash]
+    B -- Ask Gusk --> F[Shows what it will do] --> G{You confirm?}
+    G -- No --> H[Nothing changes]
+    G -- Yes --> E
+    D --> I[Action saved and logged on the device]
+    E --> I
+    I --> J[Sent to your mail service]
+    I --> L[Undo button appears]
+</pre></div>
+<p><b>Protected mail:</b> starred emails, and mail from senders or domains you protect in Settings, are never swept. If even one email in a bundle is protected, Sweep leaves the whole bundle alone.</p>
+</section>
+
+<section class="step" id="undo">
+<h2>7. Undo</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    A[You tap Undo] --> B{Still being sent to<br/>your mail service?}
+    B -- Yes --> C[Wait for it to finish]
+    B -- No --> D
+    C --> D[Work out the reverse<br/>archived: back to the inbox<br/>marked read: back to unread]
+    D --> E[Sent to your mail service]
+    E --> F[Emails back where they were]
+</pre></div>
+<p>Undo reverses only what actually changed. For example, an email that was already read before you marked it read stays read.</p>
+</section>
+
+<section class="step" id="signout">
+<h2>8. Removing an account</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    A[Settings, Accounts, Remove Account] --> B[Syncing stops]
+    B --> C[App password deleted from the Keychain]
+    C --> D[That account's mail deleted from this device]
+    D --> E{Another account<br/>signed in?}
+    E -- Yes --> F[Switch to it]
+    E -- No --> G[Sign-in screen<br/>notifications and badge cleared]
+</pre></div>
+<p>Removing an account deletes its data from this device only. Your mail at your mail service isn't changed. See the <a href="privacy.html">privacy policy</a> for more.</p>
+</section>
+</div></main>
+
+<footer class="foot"><div class="wrap">
+<span>© 2026 Gogulanathan Nagarajan</span>
+<nav><a href="how-it-works.html">How it works</a><a href="privacy.html">Privacy</a><a href="mailto:ngogulanathan@gmail.com">Contact</a></nav>
+</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+mermaid.initialize({startOnLoad:true,securityLevel:'strict',fontFamily:'Inter, system-ui, sans-serif',
+  theme:window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'neutral'});
+</script>
+</body></html>
