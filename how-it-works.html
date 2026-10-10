@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
 .how{padding:56px 0 24px}
 .how h1{font-size:clamp(32px,5vw,48px);letter-spacing:-.03em;margin:0 0 12px}
@@ -29,6 +30,8 @@
 @media (max-width:860px){.flow{grid-template-columns:repeat(3,1fr)}.flow li:nth-child(3n)::after{display:none}}
 @media (max-width:520px){.flow{grid-template-columns:1fr 1fr}.flow li::after{display:none}}
 .diagram{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+.diagram .nodeLabel,.diagram .edgeLabel{font-family:var(--font)}
+.diagram .nodeLabel b{font-weight:700}
 </style></head>
 <body>
 <header class="nav"><div class="wrap">
@@ -50,15 +53,15 @@
 <h2>1. Signing in</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
-    A([Open Gusk AI]) --> B{Is an account<br/>signed in?}
-    B -- Yes --> Z([Your inbox])
-    B -- No --> C[Sign-in screen]
-    C --> D[Pick your mail service<br/>Gmail, iCloud, Yahoo, Zoho, IMAP]
-    D --> E[Enter your email address<br/>and an app password]
-    E --> F{Accepted by your<br/>mail service?}
-    F -- No --> E
-    F -- Yes --> H[App password saved in the<br/>Keychain on this device]
-    H --> Z
+    d1_A(["fa:fa-mobile-screen <b>Open Gusk AI</b>"]) --> d1_B{"fa:fa-user-check Is an account<br/>signed in?"}
+    d1_B -- Yes --> d1_Z(["fa:fa-inbox <b>Your inbox</b>"])
+    d1_B -- No --> d1_C["fa:fa-right-to-bracket <b>Sign-in screen</b>"]
+    d1_C --> d1_D["fa:fa-envelope Pick your mail service<br/>Gmail, iCloud, Yahoo, Zoho, IMAP"]
+    d1_D --> d1_E["fa:fa-key Enter your email and an <b>app password</b>"]
+    d1_E --> d1_F{"fa:fa-server Accepted by your<br/>mail service?"}
+    d1_F -- No --> d1_E
+    d1_F -- Yes --> d1_H["fa:fa-lock Saved in the <b>Keychain</b><br/>on this device"]
+    d1_H --> d1_Z
 </pre></div>
 <ul>
 <li>An <b>app password</b> is a separate password your mail service creates for one app. Your main password is never used, and you can revoke the app password at any time.</li>
@@ -70,11 +73,11 @@ flowchart TD
 <h2>2. Getting your mail</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
-    A[Connect to your mail service<br/>IMAP over TLS, encrypted] --> B[Download your emails]
-    B --> C[(Stored on this device<br/>protected by iOS / macOS data protection)]
-    C --> D[Inbox, Browse and Sweep update]
-    C --> E{New mail or<br/>a sync problem?}
-    E -- Yes --> F[Notification and badge]
+    d2_A["fa:fa-shield-halved Connect to your mail service<br/><b>IMAP over TLS</b>, encrypted"] --> d2_B["fa:fa-download <b>Download</b> your emails"]
+    d2_B --> d2_C[("fa:fa-database Stored <b>on this device</b><br/>with iOS / macOS data protection")]
+    d2_C --> d2_D["fa:fa-arrows-rotate Inbox, Browse and Sweep <b>update</b>"]
+    d2_C --> d2_E{"fa:fa-circle-question New mail or<br/>a sync problem?"}
+    d2_E -- Yes --> d2_F["fa:fa-bell <b>Notification</b> and badge"]
 </pre></div>
 <ul>
 <li>Your mail goes directly between this device and your mail service. It's never copied to a Gusk AI server, because there isn't one.</li>
@@ -86,11 +89,11 @@ flowchart TD
 <h2>3. Bundles</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
-    A[An email] --> B{Sender on a shared domain<br/>like gmail.com?}
-    B -- No --> C[Bundled by company domain<br/>all mail from shop.example]
-    B -- Yes --> D[Bundled by exact address<br/>friend@gmail.com]
-    C --> E[Bundle in Browse and Sweep]
-    D --> E
+    d3_A["fa:fa-envelope An email"] --> d3_B{"fa:fa-at Sender on a shared domain<br/>like gmail.com?"}
+    d3_B -- No --> d3_C["fa:fa-building Bundled by <b>company domain</b><br/>all mail from shop.example"]
+    d3_B -- Yes --> d3_D["fa:fa-user Bundled by <b>exact address</b><br/>friend@gmail.com"]
+    d3_C --> d3_E["fa:fa-layer-group <b>Bundle</b> in Browse and Sweep"]
+    d3_D --> d3_E
 </pre></div>
 <p>A <b>bundle</b> is all the mail from one company, or from one person on a shared service like Gmail. Cleaning up a bundle handles all of it at once.</p>
 </section>
@@ -99,16 +102,16 @@ flowchart TD
 <h2>4. Reading and browsing</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
-    A[Your mail] --> B[Inbox<br/>every account in one list]
-    A --> C[Browse<br/>Senders, Domains, Subjects,<br/>Bundles, Messages]
-    A --> D[Sweep<br/>one bundle at a time]
-    A --> E[Ask Gusk<br/>questions in plain words]
-    B --> R[Open an email]
-    C --> R
-    R --> S{Pictures from<br/>the web?}
-    S -- Yes --> T[Blocked until you tap<br/>Load Images]
-    S -- No --> U[Email shown]
-    T --> U
+    d4_A["fa:fa-envelopes-bulk <b>Your mail</b>"] --> d4_B["fa:fa-inbox <b>Inbox</b><br/>every account in one list"]
+    d4_A --> d4_C["fa:fa-table-cells <b>Browse</b><br/>Senders, Domains, Subjects,<br/>Bundles, Messages"]
+    d4_A --> d4_D["fa:fa-broom <b>Sweep</b><br/>one bundle at a time"]
+    d4_A --> d4_E["fa:fa-comments <b>Ask Gusk</b><br/>questions in plain words"]
+    d4_B --> d4_R["fa:fa-envelope-open <b>Open an email</b>"]
+    d4_C --> d4_R
+    d4_R --> d4_S{"fa:fa-image Pictures from<br/>the web?"}
+    d4_S -- Yes --> d4_T["fa:fa-ban <b>Blocked</b> until you tap<br/>Load Images"]
+    d4_S -- No --> d4_U["fa:fa-eye <b>Email shown</b>"]
+    d4_T --> d4_U
 </pre></div>
 <ul>
 <li><b>Ask Gusk</b> runs on your device with Apple Intelligence. Your mail isn't sent to an AI cloud.</li>
@@ -120,18 +123,18 @@ flowchart TD
 <h2>5. Cleaning up</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
-    A[You choose an action] --> B{From where?}
-    B -- Sweep --> C{Is any email in the bundle<br/>starred or protected?}
-    C -- Yes --> C1[Whole bundle left alone]
-    C -- No --> D[Keep, Archive or Trash]
-    B -- Selected emails --> E[Mark Read, Archive or Trash]
-    B -- Ask Gusk --> F[Shows what it will do] --> G{You confirm?}
-    G -- No --> H[Nothing changes]
-    G -- Yes --> E
-    D --> I[Action saved and logged on the device]
-    E --> I
-    I --> J[Sent to your mail service]
-    I --> L[Undo button appears]
+    d5_A["fa:fa-hand-pointer <b>You choose an action</b>"] --> d5_B{"fa:fa-route From where?"}
+    d5_B -- Sweep --> d5_C{"fa:fa-star Any email in the bundle<br/>starred or protected?"}
+    d5_C -- Yes --> d5_C1["fa:fa-shield-heart <b>Whole bundle left alone</b>"]
+    d5_C -- No --> d5_D["fa:fa-broom <b>Keep, Archive or Trash</b>"]
+    d5_B -- Selected emails --> d5_E["fa:fa-list-check <b>Mark Read, Archive or Trash</b>"]
+    d5_B -- Ask Gusk --> d5_F["fa:fa-comments Shows what it will do"] --> d5_G{"fa:fa-circle-check You confirm?"}
+    d5_G -- No --> d5_H["fa:fa-xmark <b>Nothing changes</b>"]
+    d5_G -- Yes --> d5_E
+    d5_D --> d5_I["fa:fa-clipboard-list Action <b>saved and logged</b><br/>on the device"]
+    d5_E --> d5_I
+    d5_I --> d5_J["fa:fa-paper-plane <b>Sent</b> to your mail service"]
+    d5_I --> d5_L["fa:fa-rotate-left <b>Undo</b> button appears"]
 </pre></div>
 <p><b>Protected mail:</b> starred emails, and mail from senders or domains you protect in Settings, are never swept. If even one email in a bundle is protected, Sweep leaves the whole bundle alone.</p>
 </section>
@@ -140,12 +143,12 @@ flowchart TD
 <h2>6. Undo</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
-    A[You tap Undo] --> B{Still being sent to<br/>your mail service?}
-    B -- Yes --> C[Wait for it to finish]
-    B -- No --> D
-    C --> D[Work out the reverse<br/>archived: back to the inbox<br/>marked read: back to unread]
-    D --> E[Sent to your mail service]
-    E --> F[Emails back where they were]
+    d6_A["fa:fa-rotate-left <b>You tap Undo</b>"] --> d6_B{"fa:fa-hourglass-half Still being sent to<br/>your mail service?"}
+    d6_B -- Yes --> d6_C["fa:fa-clock <b>Wait</b> for it to finish"]
+    d6_B -- No --> d6_D
+    d6_C --> d6_D["fa:fa-shuffle Work out the <b>reverse</b><br/>archived: back to the inbox<br/>marked read: back to unread"]
+    d6_D --> d6_E["fa:fa-paper-plane <b>Sent</b> to your mail service"]
+    d6_E --> d6_F["fa:fa-circle-check Emails <b>back where they were</b>"]
 </pre></div>
 <p>Undo reverses only what actually changed. For example, an email that was already read before you marked it read stays read.</p>
 </section>
@@ -154,12 +157,12 @@ flowchart TD
 <h2>7. Removing an account</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
-    A[Settings, Accounts, Remove Account] --> B[Syncing stops]
-    B --> C[App password deleted from the Keychain]
-    C --> D[That account's mail deleted from this device]
-    D --> E{Another account<br/>signed in?}
-    E -- Yes --> F[Switch to it]
-    E -- No --> G[Sign-in screen<br/>notifications and badge cleared]
+    d7_A["fa:fa-gear Settings, Accounts,<br/><b>Remove Account</b>"] --> d7_B["fa:fa-pause <b>Syncing stops</b>"]
+    d7_B --> d7_C["fa:fa-key App password <b>deleted</b> from the Keychain"]
+    d7_C --> d7_D["fa:fa-trash-can That account's mail <b>deleted from this device</b>"]
+    d7_D --> d7_E{"fa:fa-users Another account<br/>signed in?"}
+    d7_E -- Yes --> d7_F["fa:fa-right-left <b>Switch</b> to it"]
+    d7_E -- No --> d7_G["fa:fa-right-to-bracket <b>Sign-in screen</b><br/>notifications and badge cleared"]
 </pre></div>
 <p>Removing an account deletes its data from this device only. Your mail at your mail service isn't changed. See the <a href="privacy.html">privacy policy</a> for more.</p>
 </section>
@@ -175,12 +178,26 @@ flowchart TD
   var dark=window.matchMedia('(prefers-color-scheme: dark)').matches;
   var c=dark?{bg:'#15171c',node:'#1d2027',line:'#8a919c',ink:'#eceef2',border:'rgba(255,255,255,.18)'}
             :{bg:'#ffffff',node:'#f2f3f6',line:'#6b717c',ink:'#16181d',border:'rgba(22,24,29,.16)'};
-  mermaid.initialize({startOnLoad:true,securityLevel:'strict',theme:'base',
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',
     flowchart:{curve:'basis',padding:14,useMaxWidth:true},
-    themeVariables:{fontFamily:'Inter, -apple-system, sans-serif',fontSize:'15px',
+    themeVariables:{fontFamily:'Inter, -apple-system, BlinkMacSystemFont, sans-serif',fontSize:'15px',
       background:c.bg,primaryColor:c.node,primaryTextColor:c.ink,primaryBorderColor:c.border,
       lineColor:c.line,secondaryColor:c.node,tertiaryColor:c.bg,edgeLabelBackground:c.bg,
       clusterBkg:c.bg,nodeBorder:c.border,mainBkg:c.node,textColor:c.ink}});
+  // Draw once Inter has loaded, so boxes are sized for the site's font.
+  // One at a time, after Inter and the icon font load: drawn together they
+  // land on top of each other, and early ones are sized for the wrong font.
+  var fonts=document.fonts?Promise.all([
+    document.fonts.load('400 15px Inter'),document.fonts.load('700 15px Inter'),
+    document.fonts.load('900 15px "Font Awesome 6 Free"')]).then(function(){return document.fonts.ready;}):Promise.resolve();
+  fonts.then(async function(){
+    // Each under its own id: shared ids draw every chart into the first.
+    var els=document.querySelectorAll('pre.mermaid');
+    for(var i=0;i<els.length;i++){
+      var r=await mermaid.render('how-diagram-'+(i+1),els[i].innerHTML.replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/&amp;/g,'&'));
+      els[i].innerHTML=r.svg;
+    }
+  });
 })();
 </script>
 </body></html>
