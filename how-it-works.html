@@ -18,7 +18,7 @@
 .diagram .mermaid{min-width:280px;text-align:center}
 .toc{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
 .toc a{display:inline-block;padding:6px 12px;border:1px solid var(--line-2);border-radius:999px;font-size:14px;text-decoration:none}
-.flow{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;counter-reset:none}
+.flow{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(7,1fr);gap:12px;counter-reset:none}
 .flow li{position:relative}
 .flow li:not(:last-child)::after{content:"→";position:absolute;right:-11px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px}
 .flow a{display:flex;flex-direction:column;gap:2px;height:100%;padding:14px;border-radius:14px;background:var(--card);box-shadow:var(--shadow);border:1px solid var(--line);text-decoration:none}
@@ -26,7 +26,7 @@
 .flow .n{width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:700;display:grid;place-items:center;margin-bottom:6px}
 .flow b{font-size:15px;line-height:1.3}
 .flow small{color:var(--muted);font-size:13px;line-height:1.35}
-@media (max-width:860px){.flow{grid-template-columns:repeat(3,1fr)}.flow li:nth-child(3)::after{display:none}}
+@media (max-width:860px){.flow{grid-template-columns:repeat(3,1fr)}.flow li:nth-child(3n)::after{display:none}}
 @media (max-width:520px){.flow{grid-template-columns:1fr 1fr}.flow li::after{display:none}}
 .diagram{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
 </style></head>
@@ -40,13 +40,10 @@
 <p class="eyebrow">Step by step</p>
 <h1>How Gusk AI works</h1>
 <p class="section-sub" style="margin:0">Gusk AI reads your email, groups it so it's easy to clean up, and changes it only when you ask. Gusk AI has no server: your mail goes between your device and your own mail service. Every cleanup action can be undone.</p>
-<ul class="toc">
-<li><a href="#overview">Overview</a></li><li><a href="#signin">Sign in</a></li><li><a href="#sync">Your mail</a></li><li><a href="#bundles">Bundles</a></li><li><a href="#browse">Reading</a></li><li><a href="#cleanup">Cleaning up</a></li><li><a href="#undo">Undo</a></li><li><a href="#signout">Removing an account</a></li>
-</ul>
 
 <section class="step" id="overview">
 <h2>1. Overview</h2>
-<ol class="flow"><li><a href="#signin"><span class="n">1</span><b>Sign in</b><small>With an app password</small></a></li><li><a href="#sync"><span class="n">2</span><b>Get your mail</b><small>Straight to your device</small></a></li><li><a href="#bundles"><span class="n">3</span><b>Bundles</b><small>Mail grouped by sender</small></a></li><li><a href="#browse"><span class="n">4</span><b>Read & browse</b><small>Inbox, Browse, Ask Gusk</small></a></li><li><a href="#cleanup"><span class="n">5</span><b>Clean up</b><small>Keep, Archive, Trash</small></a></li><li><a href="#undo"><span class="n">6</span><b>Undo</b><small>Put it all back</small></a></li></ol>
+<ol class="flow"><li><a href="#signin"><span class="n">1</span><b>Sign in</b><small>With an app password</small></a></li><li><a href="#sync"><span class="n">2</span><b>Get your mail</b><small>Straight to your device</small></a></li><li><a href="#bundles"><span class="n">3</span><b>Bundles</b><small>Mail grouped by sender</small></a></li><li><a href="#browse"><span class="n">4</span><b>Read & browse</b><small>Inbox, Browse, Ask Gusk</small></a></li><li><a href="#cleanup"><span class="n">5</span><b>Clean up</b><small>Keep, Archive, Trash</small></a></li><li><a href="#undo"><span class="n">6</span><b>Undo</b><small>Put it all back</small></a></li><li><a href="#signout"><span class="n">7</span><b>Remove account</b><small>Deleted from this device</small></a></li></ol>
 </section>
 
 <section class="step" id="signin">
