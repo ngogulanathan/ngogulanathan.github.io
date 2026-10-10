@@ -42,12 +42,12 @@
 <p class="section-sub" style="margin:0">Gusk AI reads your email, groups it so it's easy to clean up, and changes it only when you ask. Gusk AI has no server: your mail goes between your device and your own mail service. Every cleanup action can be undone.</p>
 
 <section class="step" id="overview">
-<h2>1. Overview</h2>
+<h2>Overview</h2>
 <ol class="flow"><li><a href="#signin"><span class="n">1</span><b>Sign in</b><small>With an app password</small></a></li><li><a href="#sync"><span class="n">2</span><b>Get your mail</b><small>Straight to your device</small></a></li><li><a href="#bundles"><span class="n">3</span><b>Bundles</b><small>Mail grouped by sender</small></a></li><li><a href="#browse"><span class="n">4</span><b>Read & browse</b><small>Inbox, Browse, Ask Gusk</small></a></li><li><a href="#cleanup"><span class="n">5</span><b>Clean up</b><small>Keep, Archive, Trash</small></a></li><li><a href="#undo"><span class="n">6</span><b>Undo</b><small>Put it all back</small></a></li><li><a href="#signout"><span class="n">7</span><b>Remove account</b><small>Deleted from this device</small></a></li></ol>
 </section>
 
 <section class="step" id="signin">
-<h2>2. Signing in</h2>
+<h2>1. Signing in</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
     A([Open Gusk AI]) --> B{Is an account<br/>signed in?}
@@ -67,7 +67,7 @@ flowchart TD
 </section>
 
 <section class="step" id="sync">
-<h2>3. Getting your mail</h2>
+<h2>2. Getting your mail</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
     A[Connect to your mail service<br/>IMAP over TLS, encrypted] --> B[Download your emails]
@@ -83,7 +83,7 @@ flowchart TD
 </section>
 
 <section class="step" id="bundles">
-<h2>4. Bundles</h2>
+<h2>3. Bundles</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
     A[An email] --> B{Sender on a shared domain<br/>like gmail.com?}
@@ -96,7 +96,7 @@ flowchart TD
 </section>
 
 <section class="step" id="browse">
-<h2>5. Reading and browsing</h2>
+<h2>4. Reading and browsing</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
     A[Your mail] --> B[Inbox<br/>every account in one list]
@@ -117,7 +117,7 @@ flowchart TD
 </section>
 
 <section class="step" id="cleanup">
-<h2>6. Cleaning up</h2>
+<h2>5. Cleaning up</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
     A[You choose an action] --> B{From where?}
@@ -137,7 +137,7 @@ flowchart TD
 </section>
 
 <section class="step" id="undo">
-<h2>7. Undo</h2>
+<h2>6. Undo</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
     A[You tap Undo] --> B{Still being sent to<br/>your mail service?}
@@ -151,7 +151,7 @@ flowchart TD
 </section>
 
 <section class="step" id="signout">
-<h2>8. Removing an account</h2>
+<h2>7. Removing an account</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
     A[Settings, Accounts, Remove Account] --> B[Syncing stops]
