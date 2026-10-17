@@ -75,7 +75,7 @@ flowchart TD
 <div class="diagram"><pre class="mermaid">
 flowchart TD
     d2_A["fa:fa-shield-halved Connect to your mail service<br/><b>IMAP over TLS</b>, encrypted"] --> d2_B["fa:fa-download <b>Download</b> your emails"]
-    d2_B --> d2_C[("fa:fa-database Stored <b>on this device</b><br/>with iOS / macOS data protection")]
+    d2_B --> d2_C[("fa:fa-database Stored <b>on this device</b><br/>in the app&#39;s own protected storage")]
     d2_C --> d2_D["fa:fa-arrows-rotate Inbox, Browse and Sweep <b>update</b>"]
     d2_C --> d2_E{"fa:fa-circle-question New mail or<br/>a sync problem?"}
     d2_E -- Yes --> d2_F["fa:fa-bell <b>Notification</b> and badge"]
@@ -104,7 +104,7 @@ flowchart TD
 <div class="diagram"><pre class="mermaid">
 flowchart TD
     d4_A["fa:fa-envelopes-bulk <b>Your mail</b>"] --> d4_B["fa:fa-inbox <b>Inbox</b><br/>every account in one list"]
-    d4_A --> d4_C["fa:fa-table-cells <b>Browse</b><br/>Senders, Domains, Subjects,<br/>Bundles, Messages"]
+    d4_A --> d4_C["fa:fa-table-cells <b>Browse</b><br/>Senders, Domains,<br/>Subjects, Messages"]
     d4_A --> d4_D["fa:fa-broom <b>Sweep</b><br/>one bundle at a time"]
     d4_A --> d4_E["fa:fa-comments <b>Ask Gusk</b><br/>questions in plain words"]
     d4_B --> d4_R["fa:fa-envelope-open <b>Open an email</b>"]
@@ -115,8 +115,8 @@ flowchart TD
     d4_T --> d4_U
 </pre></div>
 <ul>
-<li><b>Ask Gusk</b> runs on your device with Apple Intelligence. Your mail isn't sent to an AI cloud.</li>
-<li><b>Pictures from the web in emails</b> and <b>sender logos</b> are off by default. You can turn them on in Settings › Security.</li>
+<li><b>Ask Gusk</b> runs on your device, with Apple Intelligence where it's available and built-in rules elsewhere. Your mail isn't sent to an AI cloud.</li>
+<li><b>Pictures from the web in emails</b> and <b>sender logos</b> are off by default. You can turn them on in Settings › Privacy &amp; Security.</li>
 </ul>
 </section>
 
@@ -137,7 +137,7 @@ flowchart TD
     d5_I --> d5_J["fa:fa-paper-plane <b>Sent</b> to your mail service"]
     d5_I --> d5_L["fa:fa-rotate-left <b>Undo</b> button appears"]
 </pre></div>
-<p><b>Protected mail:</b> starred emails, and mail from senders or domains you protect in Settings, are never swept. If even one email in a bundle is protected, Sweep leaves the whole bundle alone.</p>
+<p><b>Protected mail:</b> starred and important emails, and mail from senders or domains you protect in Settings, are never swept. If even one email in a bundle is protected, Sweep leaves the whole bundle alone.</p>
 </section>
 
 <section class="step" id="undo">
@@ -158,7 +158,7 @@ flowchart TD
 <h2>7. Removing an account</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
-    d7_A["fa:fa-gear Settings, Accounts,<br/><b>Remove Account</b>"] --> d7_B["fa:fa-pause <b>Syncing stops</b>"]
+    d7_A["fa:fa-gear Settings, Accounts &amp; Sync,<br/><b>Remove Account</b>"] --> d7_B["fa:fa-pause <b>Syncing stops</b>"]
     d7_B --> d7_C["fa:fa-key App password <b>deleted</b> from the Keychain"]
     d7_C --> d7_D["fa:fa-trash-can That account's mail <b>deleted from this device</b>"]
     d7_D --> d7_E{"fa:fa-users Another account<br/>signed in?"}
