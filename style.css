@@ -1,13 +1,14 @@
 :root{
-  --bg:#fbfbfc;--bg-2:#f2f3f6;--card:#fff;--ink:#16181d;--ink-2:#3b404a;--muted:#6b717c;
-  --line:rgba(22,24,29,.08);--line-2:rgba(22,24,29,.14);--accent:#2e3440;--accent-ink:#fff;
+  /* Text in the icon's colours: ink on the light page, cream on the dark one. */
+  --bg:#fbfbfc;--bg-2:#f2f3f6;--card:#fff;--ink:#181819;--ink-2:#3a3a3c;--muted:#6c6c70;
+  --line:rgba(22,24,29,.08);--line-2:rgba(22,24,29,.14);--accent:#181819;--accent-ink:#f8f3e8;
   --glow:rgba(120,135,170,.18);--shadow:0 1px 2px rgba(16,18,24,.04),0 8px 24px rgba(16,18,24,.06);
   --radius:18px;--max:1080px;
   --font:"Inter",-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root{
-  --bg:#0c0d10;--bg-2:#121419;--card:#15171c;--ink:#eceef2;--ink-2:#c3c8d1;--muted:#8a919c;
-  --line:rgba(255,255,255,.07);--line-2:rgba(255,255,255,.13);--accent:#eceef2;--accent-ink:#111318;
+  --bg:#0c0d10;--bg-2:#121419;--card:#15171c;--ink:#f8f3e8;--ink-2:#d9d3c7;--muted:#a19c92;
+  --line:rgba(255,255,255,.07);--line-2:rgba(255,255,255,.13);--accent:#f8f3e8;--accent-ink:#181819;
   --glow:rgba(120,140,190,.16);--shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.35);
 }}
 *{box-sizing:border-box}
